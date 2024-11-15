@@ -36,7 +36,7 @@ const Register = () => {
     setErrorMessage('');
 
     try {
-      await axios.post('https://products-backend-o5lx.onrender.com/api/auth/register', { firstname, lastname, email, phonenumber, password },
+      await axios.post(`${API_BASE_URL}/auth/register`, { firstname, lastname, email, phonenumber, password },
         {withCredentials: true}
       );
     
