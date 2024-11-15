@@ -13,7 +13,9 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://products-backend-o5lx.onrender.com/api/auth/login', { email, password });
+      const response = await axios.post('https://products-backend-o5lx.onrender.com/api/auth/login', { email, password },
+        {withCredentials: true}
+      );
       localStorage.setItem('token', response.data.token);
       console.log(response.data.token);
       window.location.reload('/homepage');

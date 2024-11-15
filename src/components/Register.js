@@ -36,7 +36,10 @@ const Register = () => {
     setErrorMessage('');
 
     try {
-      await axios.post('https://products-backend-o5lx.onrender.com/api/auth/register', { firstname, lastname, email, phonenumber, password });
+      await axios.post('https://products-backend-o5lx.onrender.com/api/auth/register', { firstname, lastname, email, phonenumber, password },
+        {withCredentials: true}
+      );
+    
       navigate('/login');
     } catch (err) {
       console.error(err);
